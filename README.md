@@ -14,7 +14,7 @@ python src/train.py RM_AW3D30
 
 Replace `RM_AW3D30` with another dataset filename stem in `configs/`. Use `--output` to choose a different results folder. The default is `results/<dataset>/`. Training all six datasets can take time on a CPU.
 
-The script randomly reserves 25% for testing (seed 52). The two base learners are a multi-head Transformer and histogram-based gradient boosting. Standardization is fitted inside each fold. A five-fold split of the development set generates out-of-fold predictions to fit the ElasticNet. Both base learners are fitted on the complete development set for prediction.
+The script randomly holds out 25% of each dataset for testing (seed 52). On the remaining data, five-fold cross-validation generates predictions from Transformer and histogram-based gradient boosting (GBDT) to train the ElasticNet combiner.
 
 Each run saves `metrics.json`, `test_predictions.csv`, `model.joblib` and `test_scatter.png`. The CSV includes each sample's original Excel row number. Pearson r is calculated directly from the paired reference and predicted errors. MAE, RMSE and population-normalized SD are computed from the prediction residuals. Scatter axes display −20 to 20 m; all held-out samples are included in the fit and metrics.
 
