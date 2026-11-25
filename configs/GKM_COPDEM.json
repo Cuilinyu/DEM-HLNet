@@ -1,12 +1,7 @@
 {
   "title": "Greater Khingan Mountains \u2014 COPDEM",
-  "test_fraction": 0.25,
-  "cpu_threads": 4,
   "settings": {
     "transformer": {
-      "width": 16,
-      "heads": 2,
-      "layers": 2,
       "epochs": 18,
       "learning_rate": 0.0015,
       "batch_size": 768
@@ -14,24 +9,12 @@
     "gbdt": {
       "max_iter": 850,
       "max_leaf_nodes": 255,
-      "min_samples_leaf": 5,
       "l2_regularization": 4,
-      "learning_rate": 0.035,
-      "early_stopping": false,
-      "random_state": 52
+      "learning_rate": 0.035
     },
     "elasticnet": {
       "alpha": 0.001,
       "l1_ratio": 0.9
-    },
-    "folds": 5,
-    "random_state": 52
-  },
-  "reference_test_samples": 19473,
-  "reference_metrics": {
-    "pearson_r": 0.774308199395349,
-    "mae_m": 1.801160672275141,
-    "rmse_m": 2.4837040056412487,
-    "sd_m": 2.4836414414215353
+    }
   }
 }

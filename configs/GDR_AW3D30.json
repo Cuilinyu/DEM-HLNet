@@ -1,12 +1,7 @@
 {
   "title": "Great Dividing Range \u2014 AW3D30",
-  "test_fraction": 0.25,
-  "cpu_threads": 4,
   "settings": {
     "transformer": {
-      "width": 16,
-      "heads": 2,
-      "layers": 2,
       "epochs": 12,
       "learning_rate": 0.0015,
       "batch_size": 1024
@@ -14,24 +9,12 @@
     "gbdt": {
       "max_iter": 500,
       "max_leaf_nodes": 127,
-      "min_samples_leaf": 5,
       "l2_regularization": 2,
-      "learning_rate": 0.06,
-      "early_stopping": false,
-      "random_state": 52
+      "learning_rate": 0.06
     },
     "elasticnet": {
       "alpha": 0.001,
       "l1_ratio": 0.1
-    },
-    "folds": 5,
-    "random_state": 52
-  },
-  "reference_test_samples": 39168,
-  "reference_metrics": {
-    "pearson_r": 0.8389331466117416,
-    "mae_m": 0.6600030956947055,
-    "rmse_m": 1.0471956599673014,
-    "sd_m": 1.047194125830051
+    }
   }
 }

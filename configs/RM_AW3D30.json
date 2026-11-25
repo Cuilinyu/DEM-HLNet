@@ -1,12 +1,7 @@
 {
   "title": "Rocky Mountains \u2014 AW3D30",
-  "test_fraction": 0.25,
-  "cpu_threads": 4,
   "settings": {
     "transformer": {
-      "width": 16,
-      "heads": 2,
-      "layers": 2,
       "epochs": 28,
       "learning_rate": 0.0015,
       "batch_size": 384
@@ -14,24 +9,12 @@
     "gbdt": {
       "max_iter": 650,
       "max_leaf_nodes": 127,
-      "min_samples_leaf": 5,
       "l2_regularization": 2,
-      "learning_rate": 0.04,
-      "early_stopping": false,
-      "random_state": 52
+      "learning_rate": 0.04
     },
     "elasticnet": {
       "alpha": 0.1,
       "l1_ratio": 0.9
-    },
-    "folds": 5,
-    "random_state": 52
-  },
-  "reference_test_samples": 9023,
-  "reference_metrics": {
-    "pearson_r": 0.7480717151686059,
-    "mae_m": 2.842041929022322,
-    "rmse_m": 4.017033124743873,
-    "sd_m": 4.015657964325636
+    }
   }
 }

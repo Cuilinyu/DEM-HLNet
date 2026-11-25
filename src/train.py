@@ -14,6 +14,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
+from experiment_config import load_config
 from Transformer import TransformerRegressor
 from plot_results import save_scatter
 
@@ -102,7 +103,7 @@ def main():
     parser.add_argument("dataset", choices=datasets)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    config = json.loads((ROOT / "configs" / f"{args.dataset}.json").read_text(encoding="utf-8"))
+    config = load_config(ROOT / "configs" / f"{args.dataset}.json")
     output = args.output or ROOT / "results" / args.dataset
     metrics = run(ROOT / "datasets" / f"{args.dataset}.xlsx", output, config)
     print(json.dumps(metrics, indent=2))

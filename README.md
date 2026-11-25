@@ -18,7 +18,7 @@ The script randomly reserves 25% for testing (seed 52). The two base learners ar
 
 Each run saves `metrics.json`, `test_predictions.csv`, `model.joblib` and `test_scatter.png`. The CSV includes each sample's original Excel row number. Pearson r is calculated directly from the paired reference and predicted errors. MAE, RMSE and population-normalized SD are computed from the prediction residuals. Scatter axes display −20 to 20 m; all held-out samples are included in the fit and metrics.
 
-`configs/` stores the exact selected settings, reference metrics and the expected number of test samples for each dataset. The reference metrics came from the recorded local runs with Python 3.12.14, PyTorch 2.8.0 CPU and the pinned dependencies. Numerical results can vary with platform and libraries.
+`configs/` lists the key dataset settings. Shared defaults for the model and the 25% test split and five folds are defined in `src/experiment_config.py`. The training script records the resolved settings and computed metrics in its output directory. Numerical results can vary with platform and libraries.
 
 ## Scope
 
